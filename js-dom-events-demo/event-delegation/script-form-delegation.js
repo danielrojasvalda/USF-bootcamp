@@ -1,6 +1,12 @@
 const form = document.querySelector("form");
 const friendList = document.querySelector("#friend-list");
 
+friendList.addEventListener("click", function(event) {
+  if (event.target.tagName === "BUTTON") {
+    event.target.parentElement.remove();
+  }
+}); 
+
 form.addEventListener("submit", function(event) {
   event.preventDefault();
   const newFriendInput = document.querySelector("#first-name");
@@ -13,7 +19,6 @@ form.addEventListener("submit", function(event) {
   friendList.append(newLi);
   form.reset();
 });
-
 friendList.addEventListener("click", function(event) {
   if (event.target.tagName === "BUTTON") {
     event.target.parentElement.remove();
