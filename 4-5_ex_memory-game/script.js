@@ -1,5 +1,11 @@
 const gameContainer = document.getElementById("game");
-
+//////
+let card1 = null;
+let card2 = null;
+let cardsFlipped = 0;
+let noClick = false;
+let score = 0; 
+//////
 const COLORS = [
   "red",
   "blue",
@@ -61,6 +67,43 @@ function createDivsForColors(colorArray) {
 function handleCardClick(event) {
   // you can use event.target to see which element was clicked
   console.log("you just clicked", event.target);
+
+//cards matching
+if (noClick) return;
+  if (event.target.classList.contains("flipped")) return;
+
+  let currentCard = event.target;
+  currentCard.style.backgroundColor = currentCard.classList[0];
+
+  if (!card1 || !card2) {
+    currentCard.classList.add("flipped");
+    card1 = card1 || currentCard;
+    card2 = currentCard === card1 ? null : currentCard;
+  }
+
+  if (card1 && card2) {
+    noClick = true;
+
+  if (card1.className === card2.className) {
+      cardsFlipped += 2;
+      card1.removeEventListener("click", handleCardClick);
+      card2.removeEventListener("click", handleCardClick);
+      card1 = null;
+      card2 = null;
+      noClick = false;
+    } else {
+      setTimeout(function() {
+        card1.style.backgroundColor = "";
+        card2.style.backgroundColor = "";
+        card1.classList.remove("flipped");
+        card2.classList.remove("flipped");
+        card1 = null;
+        card2 = null;
+        noClick = false;
+      }, 2000);
+    }
+  }
+//end cards matching
 }
 
 // when the DOM loads
