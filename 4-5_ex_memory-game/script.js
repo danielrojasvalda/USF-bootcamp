@@ -12,11 +12,13 @@ const COLORS = [
   "green",
   "orange",
   "purple",
+  "black",
   "red",
   "blue",
   "green",
   "orange",
-  "purple"
+  "purple",
+  "black"
 ];
 
 // here is a helper function to shuffle an array
@@ -100,7 +102,7 @@ if (noClick) return;
         card1 = null;
         card2 = null;
         noClick = false;
-      }, 2000);
+      }, 1500);
     }
   }
 //end cards matching
