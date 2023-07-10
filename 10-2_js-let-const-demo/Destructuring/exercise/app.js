@@ -134,6 +134,4 @@ let arr = [1, 2];
 const raceResults = ([first, second, third, ...rest]) => ({ first, second, third, rest });
 //test
 //raceResults(['Tom', 'Margaret', 'Allison', 'David', 'Pierre'])
-
-
 // **********************
