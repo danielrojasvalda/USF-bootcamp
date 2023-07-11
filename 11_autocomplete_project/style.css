@@ -1,0 +1,44 @@
+body {
+  background-color: #8B99A8;
+  font-family: 'Montserrat';
+  margin: 20px;
+}
+
+.suggestions {
+  position: relative;
+}
+
+.suggestions ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  z-index: 1;
+}
+
+.suggestions ul li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestions ul li:hover {
+  background-color: #f1f1f1;
+}
+
+h1 {
+  color: antiquewhite;
+}
+
+p {
+  color:burlywood;
+}
+
+#suggestions div {
+  border: 1px solid black;
+  width: 15%;
+  height: 200px;
+  margin: 10px;
+  display: inline-block;
+}
