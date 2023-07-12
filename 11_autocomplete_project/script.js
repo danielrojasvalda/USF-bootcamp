@@ -31,6 +31,7 @@ function showSuggestions(results, inputVal) {
 	});
   
 	// Show or hide the suggestions based on input value
+	// condition if (inputVal) display block else none)
 	suggestions.style.display = inputVal ? 'block' : 'none';
 }
 
