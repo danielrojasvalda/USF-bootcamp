@@ -11,7 +11,6 @@ class Game {
     this.width = 7;
     this.height = 6;
     this.currPlayer = p1;
-    this.board = [];
     this.makeBoard();
     this.makeHtmlBoard();
   }
