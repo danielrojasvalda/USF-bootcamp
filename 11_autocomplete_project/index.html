@@ -1,25 +1,19 @@
-<!DOCTYPE html>
-<html lang="en" >
+<!doctype html>
 <head>
-  <meta charset="UTF-8">
-  <title>Fruit Autocomplete</title>
-  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-  <link rel="stylesheet" href="./style.css">
-
+  <title>Connect 4</title>
+  <link href="connect4.css" rel="stylesheet">
 </head>
 <body>
-  <div class="title-container">
-    <h1>Fruit Autocomplete Search</h1>
-    <p>Predictive text search app for fruit</p>  
-  </div>
-  <div class="search-container">
 
-	  <input type="text" name="fruit" id="fruit" placeholder="Search fruit 🍎">
-    <div class="suggestions">
-      <ul></ul>
-    </div>
-  </div>
-  <script  src="./script.js"></script>
+<input id="p1-color" placeholder="Player 1 color">
+<input id="p2-color" placeholder="Player 2 color">
+<button id="start-game">Start Game!</button>
+
+<div id="game">
+  <table id="board"></table>
+</div>
+
+<script src="connect4.js"></script>
 
 </body>
 </html>

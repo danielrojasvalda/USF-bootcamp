@@ -1,67 +1,26 @@
-* {
-    box-sizing: border-box;
+* game board table */
+
+#board td {
+  width: 50px;
+  height: 50px;
+  border: solid 1px #666;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, rgb(96, 110, 117) 60%, rgb(14, 45, 89));
-  font-family: 'Montserrat', sans-serif;
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+  margin: 5px;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
 }
 
-input {
-  width: 40%;
-  padding: 10px;
-  font-family: 'Montserrat', sans-serif;
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+  border: dashed 1px lightgray;
 }
 
-.search-container {
-  height: 100vh;
-  text-align: center;
-}
-
-.title-container {
-  text-align: center;
-}
-
-ul {
-  max-width: 40%;
-  margin: 0 auto;
-}
-
-ul li:hover {
-  background-color: #f1f1f1;
-}
-
-.suggestions ul {
-  display: none;
-  padding: 0;
-  background-color: white;
-  max-height: 250px;
-  overflow-y: auto;
-}
-
-.suggestions ul li {
-  padding: 5px;
-  cursor: pointer;
-}
-
-.suggestions ul li:hover {
-  background-color: #f1f1f1;
-}
-
-h1 {
-  color: antiquewhite;
-}
-
-p {
-  color: burlywood;
-}
-
-#suggestions div {
-  border: 1px solid black;
-  width: 15%;
-  height: 200px;
-  margin: 10px;
-  display: inline-block;
+#column-top td:hover {
+  background-color: gold;
 }

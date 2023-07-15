@@ -5,23 +5,20 @@ const fruit = ['Apple', 'Apricot', 'Avocado 🥑', 'Banana', 'Bilberry', 'Blackb
 
 // Function to search for matching fruits based on input value
 function search(str) {
-	let results = [];
-	results = fruit.filter(function(item) {
-	    return item.toLowerCase().includes(str.toLowerCase());
+	
+	return fruit.filter(function(item) {
+	    return item.toLowerCase().includes(str);
 	});
-    return results;
-}
+}   
   
 // Event handler for the 'keyup' event on the input element
 function searchHandler(e) {
-    const inputVal = e.target.value;
+    const inputVal = (e.target.value).toLowerCase();
     const results = search(inputVal);
     showSuggestions(results, inputVal);
 }
 
 function showSuggestions(results, inputVal) {
-	//console.log(results);
-	//console.log(inputVal);
 	suggestions.innerHTML = '';
 
 	results.forEach(function(result) {
@@ -36,16 +33,13 @@ function showSuggestions(results, inputVal) {
 }
 
 function useSuggestion(e) {
-	// console.log(e);
     if (e.target.tagName === 'LI') {
         // Set the value of the input field to the selected suggestion
         input.value = e.target.textContent;
       // Hide the suggestions
     suggestions.style.display = 'none';
-	console.log(input.value);
   }
 }
-
 // Event listener for the 'keyup' event on the input element
 input.addEventListener('keyup', searchHandler);
 
