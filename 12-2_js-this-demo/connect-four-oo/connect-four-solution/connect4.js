@@ -86,7 +86,9 @@ class Game {
       piece.style.top = -50 * (y + 2);
   
       const spot = document.getElementById(`${y}-${x}`);
-      spot.append(piece);
+      if (spot) {
+        spot.append(piece);
+      }
     }
   
     /** endGame: announce game end */
@@ -121,7 +123,7 @@ class Game {
       // check for win
       if (this.checkForWin()) {
         this.gameOver = true;
-        return this.endGame(`The ${this.currPlayer.color} player won!`);
+        return this.endGame(`The ${this.currPlayer.gameName} won!`);
       }
   
       // switch players
@@ -166,11 +168,19 @@ class Game {
   class Player {
     constructor(color) {
       this.color = color;
+      this.gameName = 'Player 1';
+    }
+  }
+
+  class Player2{
+    constructor(color) {
+      this.color = color;
+      this.gameName = 'Player 2';
     }
   }
   
   document.getElementById('start-game').addEventListener('click', () => {
     let p1 = new Player(document.getElementById('p1-color').value);
-    let p2 = new Player(document.getElementById('p2-color').value);
+    let p2 = new Player2(document.getElementById('p2-color').value);
     new Game(p1, p2);
   });

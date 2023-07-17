@@ -5,14 +5,17 @@
   <link href="connect4.css" rel="stylesheet">
 </head>
 <body>
-  <div id="game">
-    <h1> choose your color</h1>
-    Player 1:<input type="color" id="p1-color" placeholder="Player 1 color">
-    Player 2:<input type="color" id="p2-color" placeholder="Player 2 color">
+  <div id="game" class="main-container">
+    <div class="title-container">
+      <h1>Connect Four</h1>
+      <p>Choose your color</p>  
+    </div>
+    <p>Player 1:<input type="color" id="p1-color" placeholder="Player 1 color" value="#ee1935">
+    Player 2:<input type="color" id="p2-color" placeholder="Player 2 color" value="#1216e1"></p>
     <button id="start-game">Start Game!</button>
     <table id="board"></table>
   </div>
-
+</div>
   <script src="connect4.js"></script>
 </body>
 </html>
