@@ -11,6 +11,10 @@
 </head>
 
 <body>
+  <nav class="navbar">
+    <a href="/">Home</a>
+  </nav>
+
   <header>
     <div class="container">
       <img src="{{url_for('static', filename='_logo.png')}}"  width="200"/>
@@ -26,8 +30,9 @@
 
 <footer>
   <div class="container">
-    <p>&copy; 2023 danielrojas</p>
+    <div id="footer">
+      <p>&copy; 2023 danielrojas</p>
+    </div>
   </div>
-
-  </footer>
+</footer>
 </html>
