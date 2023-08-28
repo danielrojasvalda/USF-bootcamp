@@ -48,7 +48,31 @@ personality_quiz = Survey(
     ]
 )
 
+my_quiz = Survey(
+    "Software evaluation questionnaire",
+    "Thank you for visiting our software survey. By filling out this 5 minute survey, you will help us identify issues and provide you with the best quality product and service.",
+    [
+        Question("How easy was it to install our software?",
+                 ["Easy", "Medium", "Hard"],
+                ),
+        Question("How user-friendly is our software's interface?",
+                 ["Friendly", "Medium", "Not friendy"],
+                 ),
+        Question("Is the customer support for our software helpful?",
+                ["Yes", "Sometimes", "No"],
+        ),
+        Question("WHow often does our software freeze or crash?",
+                 ["A few times", "Once a month", "Once a week"],
+                 ),
+        Question("How likely are you to recommend our software to others?",
+                 ["Likely", "No likely"],
+                 allow_text=True,
+                 ),
+    ],
+)
+
 surveys = {
     "satisfaction": satisfaction_survey,
     "personality": personality_quiz,
+    "myquiz": my_quiz,
 }

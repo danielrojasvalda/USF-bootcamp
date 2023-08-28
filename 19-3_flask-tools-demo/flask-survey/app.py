@@ -14,7 +14,7 @@ CURRENT_SURVEY_KEY = "current_survey"
 RESPONSES_KEY = "responses"
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "never-tell!"
+app.config["SECRET_KEY"] = "trick123"
 app.config["DEBUG_TB_INTERCEPT_REDIRECTS"] = False
 
 
@@ -32,6 +32,10 @@ def pick_survey():
     """Select survey question."""
 
     survey_id = request.form["survey_code"]
+
+    # don't let them re-take a survey until cookie times out
+    if request.cookies.get(f"completed_{survey_id}"):
+        return render_template("already-done.html")
 
     survey = surveys[survey_id]
     session[CURRENT_SURVEY_KEY] = survey_id
