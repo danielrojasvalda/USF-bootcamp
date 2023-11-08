@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Madlibs</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <img src="{{url_for('static', filename='_logo.png')}}"  width="200"/>
+    </div>
+  </header>
+  
+  <form action="/result">
+    {% for prompt in prompts %}
+      <p>{{ prompt }}:
+        <input name="{{ prompt }}">
+      </p>
+    {% endfor %}
+    <button>Submit</button>
+  </form>
+
+</body>
+</html>

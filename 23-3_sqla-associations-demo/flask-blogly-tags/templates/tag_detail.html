@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Tag Details{% endblock %}
+
+{% block content %}
+  <h2>{{ tag.name }}</h2>
+  <!-- Show related posts here if needed -->
+  <a href="{{ url_for('edit_tag', tag_id=tag.id) }}" class="btn btn-primary btn-sm">Edit</a>
+  <button class="btn btn-danger btn-sm" formaction="{{ url_for('delete_tag', tag_id=tag.id) }}" formmethod="POST">Delete</button>
+  <a href="{{ url_for('list_tags') }}" class="btn btn-secondary btn-sm">Back to Tags</a>
+{% endblock %}
