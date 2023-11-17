@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Add Post{% endblock %}
+
+{% block content %}
+<h3>Add Post</h3>
+
+
+<form method="POST" action="{{ url_for('new_post', user_id=user_id) }}">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter a title" required>
+    </div>
+    <div class="form-group">
+        <label for="content">Content</label>
+        <textarea class="form-control" id="content" name="content" placeholder="Enter post content" required></textarea>
+    </div>
+    <a href="{{ url_for('user_detail', user_id=user_id) }}" class="btn btn-info btn-sm">Cancel</a>
+    <button type="submit" class="btn btn-success btn-sm">Add Post</button>
+</form>
+
+
+{% endblock %}
