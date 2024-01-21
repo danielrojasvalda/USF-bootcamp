@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Web Works Exercise</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1># ****How Web Works Exercise****</h1>
+    <h2>## **Part One: Solidify Terminology**</h2>
+    <h3>In your own terms, define the following terms:</h3>
+    <ul>
+      <li>What is HTTP?</li>
+      <p>
+        Hypertext Transfer Protocol. It is the foundation of data communication on the web and defines how messages are formatted and transmitted, and how web servers and browsers should respond to various commands.
+      </p>
+      <li>What is a URL?</li>
+      <p>
+        Uniform Resource Locator. It is the address used to identify resources on the web, such as web pages, images, videos, the domain name, the path to the resource.
+      </p>
+      <li>What is DNS?</li>
+      <p>
+        Domain Name System. It is a system that translates human-readable domain names (e.g., "example.com") into IP addresses (e.g., "192.0.2.1"). DNS enables us to access websites using domain names instead of remembering complex IP addresses.
+      </p>
+      <li>What is a query string?</li>
+      <p>
+        A query string is a part of a URL that follows the question mark (?). It is used to send data to a web server as key-value pairs. For example, in the URL "https://example.com/search?q=keyword", the query string is "q=keyword" where "q" is the key and "keyword" is the value.
+      </p>
+      <li>What are two HTTP verbs and how are they different?</li>
+      <p>
+        HTTP verbs, also known as HTTP methods, are used to indicate the desired action to be performed on a resource. Two common HTTP verbs are:
+        <ul>
+          <li>
+            <strong>GET:</strong> Used to retrieve data from a server. 
+          </li>
+          <li>
+            <strong>POST:</strong> Used to submit data to be processed to a specified resource.
+          </li>
+        </ul>
+      </p>
+      <li>What is an HTTP request?</li>
+      <p>
+        An HTTP request is a message sent by a client (usually a web browser) to a web server to request a specific resource.
+      </p>
+      <li>What is an HTTP response?</li>
+      <p>
+        An HTTP response is a message sent by a web server back to the client in response to an HTTP request.
+      </p>
+      <li>What is an HTTP header? Give a couple examples of request and response headers you have seen.</li>
+      <p>
+        HTTP headers are the name or value pairs that are displayed in the request and response messages<br>
+        <strong>Request Header:</strong><br>
+        <code>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36</code>
+        <br>
+        <strong>Response Header:</strong><br>
+        <code>Content-Type: text/html; charset=UTF-8</code>
+      </p>
+      <li>What are the processes that happen when you type “http://somesite.com/some/page.html” into a browser?</li>
+      <p>
+        When typing "http://somesite.com/some/page.html" into a browser, the following processes happen:
+        <ol>
+          <li>The browser checks the DNS to resolve the domain name "somesite.com" into an IP address.</li>
+          <li>The browser establishes a TCP connection to the web server at the resolved IP address.</li>
+          <li>An HTTP GET request is sent to the server for the resource "some/page.html".</li>
+          <li>The server processes the request and sends back an HTTP response with the requested HTML page.</li>
+          <li>The browser receives the response and renders the HTML page, displaying it to the user.</li>
+        </ol>
+       </p>
+    </ul>
+
+  <h2>****Part Two: Practice Tools****</h2>
+  <ol>
+    <li>
+      Using <em>curl</em>, make a <em>GET</em> request to the <a href="https://icanhazdadjoke.com/">icanhazdadjoke.com</a> API to find all jokes involving the word “pirate”.
+    </li>
+    <p>curl GET "https://icanhazdadjoke.com/search?term=pirate" </p>
+    <li>
+      Use <em>dig</em> to find what the IP address is for <a href="https://icanhazdadjoke.com/">icanhazdadjoke.com</a>.
+    </li>
+    <p>dig icanhazdadjoke.com</p>
+    <li>
+      Make a simple web page and serve it using <em>python3 -m http.server</em>. Visit the page in a browser.
+    </li>
+    <p>this page :D</p>
+  </ol>
+
+  <h2>**Part Three: Explore Dev Tools**</h2>
+  <p>
+    Build a very simple HTML form that uses the GET method (it can use the same page URL for the action) when the form is submitted.
+
+    Add a field or two to the form and, after submitting it, explore in Chrome Developer tools how you can view the request and response headers.
+
+    Edit the page to change the form type to POST, refresh in the browser and re-submit. Do you still see the field in the query string? Explore in Chrome how you can view the request and response headers, as well as the form data.
+  </p>
+  <h4>Simple Form</h4>
+  <form action="" method="GET">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+
+
+  <h2>**Part Four: Explore the URL API**</h2>
+  <p>
+    At times, it’s useful for your JavaScript to look at the URL of the browser window and change how the script works depending on parts of that (particularly the query string).
+
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/URL">Read about the URL API</a>
+
+    Try some of the code examples in the Chrome Console so that you can get comfortable with the basic methods and properties for instances of the URL class.
+  </p>
+
+  <footer>
+    <p>&copy; 2023 Daniel Rojas</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
