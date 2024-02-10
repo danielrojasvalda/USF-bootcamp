@@ -5,6 +5,7 @@ const DrawCard = () => {
   const [remaining, setRemaining] = useState(0);
   const [error, setError] = useState(null);
   const [currentCard, setCurrentCard] = useState(null);
+  const [shuffling, setShuffling] = useState(false);
 
   useEffect(() => {
     fetchNewDeck();
@@ -17,6 +18,7 @@ const DrawCard = () => {
       setDeckId(data.deck_id);
       setRemaining(data.remaining);
       setError(null);
+      setCurrentCard(null);
     } catch (error) {
       setError('Error fetching new deck');
     }
@@ -43,9 +45,28 @@ const DrawCard = () => {
     }
   };
 
+  const shuffleDeck = async () => {
+    setShuffling(true);
+    try {
+      const response = await fetch(`https://deckofcardsapi.com/api/deck/${deckId}/shuffle/`);
+      const data = await response.json();
+      if (data.success) {
+        setRemaining(52);
+        setCurrentCard(null);
+        setError(null);
+      } else {
+        setError('Error shuffling deck');
+      }
+    } catch (error) {
+      setError('Error shuffling deck');
+    }
+    setShuffling(false);
+  };
+
   return (
     <div>
-      <button onClick={drawCard}>Draw a Card</button>
+      <button onClick={drawCard} disabled={shuffling}>Draw a Card</button>
+      <button onClick={shuffleDeck} disabled={shuffling}>Shuffle Deck</button>
       {error && <p>{error}</p>}
       {currentCard && (
         <div>
