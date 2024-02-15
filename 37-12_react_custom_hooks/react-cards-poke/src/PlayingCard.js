@@ -1,8 +1,10 @@
 import React from "react";
 import { useFlip } from "./hooks";
 import "./PlayingCard.css";
+import backOfCard from "./back.png";
 
-function PlayingCard({ front, back }) {
+
+function PlayingCard({ front, back = backOfCard}) {
   const [isFacingUp, flipCard] = useFlip();
 
   return (
