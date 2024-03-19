@@ -1,0 +1,18 @@
+{
+  "name": "dsa-sorting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test-bubble": "jest bubble.test.js",
+    "test-merge": "jest merge.test.js",
+    "test": "jest bubble.test.js merge.test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+
+  
+}
